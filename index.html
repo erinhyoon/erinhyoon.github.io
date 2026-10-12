@@ -1,0 +1,265 @@
+<title>Hayoung Yoon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap">
+<style>
+/* Layout: sticky identity rail (photo, contact) beside a single reading column of dated sections; one column under 820px */
+:root{
+  --paper:#F4F6F7; --surface:#FFFFFF; --ink:#141A20; --muted:#5C6773;
+  --rule:#D9DFE4; --accent:#2F5D74; --accent-soft:#E5EDF1;
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --sans:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#111519; --surface:#171D22; --ink:#E6EBEF; --muted:#9BA7B2;
+    --rule:#2A333B; --accent:#8CBBD1; --accent-soft:#1D2A32; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#111519; --surface:#171D22; --ink:#E6EBEF; --muted:#9BA7B2;
+  --rule:#2A333B; --accent:#8CBBD1; --accent-soft:#1D2A32; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
+  font-size:16px;line-height:1.65;padding-inline:24px;padding-block:56px 72px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1040px;margin-inline:auto;display:grid;grid-template-columns:260px 1fr;gap:56px;align-items:start}
+@media (max-width:820px){ .wrap{grid-template-columns:1fr;gap:36px} body{padding-block:36px 56px} }
+
+/* identity rail */
+.rail{position:sticky;top:env(safe-area-inset-top,0px);display:flex;flex-direction:column;gap:18px;min-width:0}
+@media (max-width:820px){ .rail{position:static} }
+.photo{width:100%;max-width:220px;aspect-ratio:4/5;object-fit:cover;border-radius:3px;
+  border:1px solid var(--rule);filter:saturate(.92)}
+.name{font-family:var(--serif);font-size:1.75rem;line-height:1.15;font-weight:600;margin:0;text-wrap:balance}
+.hanja{font-family:var(--serif);color:var(--muted);font-size:1rem;margin:2px 0 0}
+.role{margin:10px 0 0;color:var(--muted);font-size:.95rem}
+.role strong{color:var(--ink);font-weight:500}
+.contact{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:5px;font-size:.9rem;color:var(--muted)}
+.contact a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-soft);word-break:break-all}
+.contact a:hover{border-bottom-color:currentColor}
+.contact .k{font-family:var(--mono);font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);display:block}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+
+/* main column */
+main{min-width:0;display:flex;flex-direction:column;gap:40px}
+.lede{font-family:var(--serif);font-size:1.24rem;line-height:1.55;margin:0;max-width:62ch}
+.lede em{font-style:italic;color:var(--muted)}
+section{display:flex;flex-direction:column;gap:14px}
+h2{font-family:var(--mono);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);margin:0;padding-bottom:7px;border-bottom:1px solid var(--rule);font-weight:500}
+p{margin:0;max-width:66ch}
+.item{display:grid;grid-template-columns:120px 1fr;gap:4px 20px}
+@media (max-width:560px){ .item{grid-template-columns:1fr;gap:2px} }
+.when{font-family:var(--mono);font-size:.78rem;color:var(--muted);padding-top:4px;letter-spacing:.02em}
+.what{min-width:0}
+.what h3{margin:0;font-size:1rem;font-weight:600;line-height:1.4}
+.what .sub{margin:1px 0 0;color:var(--muted);font-size:.93rem}
+.what .note{margin:5px 0 0;font-size:.93rem;color:var(--muted)}
+.what .note cite{font-style:italic}
+.stack{display:flex;flex-direction:column;gap:20px}
+.pub{display:flex;flex-direction:column;gap:3px;padding-left:16px;border-left:2px solid var(--accent-soft)}
+.pub .cite{margin:0;max-width:64ch}
+.pub .cite em{font-style:italic}
+.pub .venue{font-family:var(--mono);font-size:.74rem;color:var(--muted);letter-spacing:.04em}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin:0;padding:0;list-style:none}
+.chips li{font-family:var(--mono);font-size:.76rem;padding:3px 9px;border:1px solid var(--rule);
+  border-radius:2px;color:var(--muted);background:var(--surface)}
+footer{margin-top:16px;padding-top:14px;border-top:1px solid var(--rule);font-size:.82rem;color:var(--muted)}
+</style>
+
+<div class="wrap">
+  <aside class="rail">
+    <img class="photo" src="profile.jpg" alt="Hayoung Yoon">
+    <div>
+      <h1 class="name">Hayoung Yoon</h1>
+      <p class="hanja">윤하영 · 尹賀泳</p>
+      <p class="role"><strong>Postdoctoral Researcher</strong><br>
+        BK21 Education and Research Program<br>
+        Graduate School of International Studies<br>
+        Seoul National University</p>
+    </div>
+    <ul class="contact">
+      <li><span class="k">Email</span><a href="mailto:hyoon03@snu.ac.kr">hyoon03@snu.ac.kr</a></li>
+      <li><span class="k">Office</span>Room 303, Bldg. 140-2<br>Seoul National University, Seoul</li>
+      <li><span class="k">Department</span><a href="https://gsisbk21.snu.ac.kr/researchers-staff/">GSIS BK21 · Researchers</a></li>
+    </ul>
+  </aside>
+
+  <main>
+    <p class="lede">I study how governments and the press define social problems, and how those definitions
+      narrow the policies that follow. My work is comparative and centred on East Asia, with
+      low fertility, gender and labour policy as its main cases.</p>
+
+    <section>
+      <h2>Current research</h2>
+      <div class="stack">
+        <div class="item">
+          <div class="when">In preparation</div>
+          <div class="what">
+            <h3>Is Korea becoming Japan?</h3>
+            <p class="sub">Low fertility discourse in newspapers and policy documents, 1995–2020</p>
+            <p class="note">A bilingual dictionary applied to every mention of low fertility in 27,790 articles
+              from four national dailies, compared with the four Korean Basic Plans and sixteen Japanese
+              White Papers. Korean coverage closely resembles the government's own framing; Japanese
+              coverage does not.</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="when">In preparation</div>
+          <div class="what">
+            <h3>Where is low fertility contested?</h3>
+            <p class="sub">Framing in the press and in parliament in South Korea and Japan</p>
+            <p class="note">Newspaper coverage set beside speeches in the National Assembly and the National
+              Diet, measured with a keyword-assisted topic model, to locate whether the division runs
+              between news outlets, between parties, or between the two arenas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Publications</h2>
+      <div class="stack">
+        <div class="pub">
+          <p class="cite">Yoon, Hayoung (2024). Shaping Low Fertility Policies: A Comparative Analysis of
+            Initial Policymaking in South Korea and Japan Using Multiple Streams Theory.</p>
+          <span class="venue">Crisisonomy 20(8), 1–27</span>
+        </div>
+        <div class="pub">
+          <p class="cite">Yoon, Hayoung (2023). The Discourse of Non-Regular Employment Policies:
+            A Comparative Analysis between South Korea and Japan.</p>
+          <span class="venue">The Institute for Social Science Research 16(1), 231–267</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Selected presentations</h2>
+      <div class="stack">
+        <div class="item">
+          <div class="when">2023</div>
+          <div class="what">
+            <h3>Exploring female labour market differences in South Korea and Taiwan's work–family policies</h3>
+            <p class="sub">Korean Association for Policy Studies</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="when">2021</div>
+          <div class="what">
+            <h3>A discursive institutionalist approach to the low birth rate issue in Korea and Japan</h3>
+            <p class="sub">Korean Political Science Association</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="when">2019</div>
+          <div class="what">
+            <h3>Comparative study on the national pension system in Korea and Taiwan: a historical institutional perspective</h3>
+            <p class="sub">Korean Political Science Association, Annual Conference</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div class="stack">
+        <div class="item">
+          <div class="when">2017–2025</div>
+          <div class="what">
+            <h3>Ph.D., International Cooperation</h3>
+            <p class="sub">Graduate School of International Studies, Seoul National University</p>
+            <p class="note">Dissertation: <cite>Institutional Rigidity and Framing Gaps: Examining Policy
+              Responses to Low Fertility in South Korea and Japan</cite></p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="when">2014–2016</div>
+          <div class="what">
+            <h3>M.A., International Cooperation</h3>
+            <p class="sub">Graduate School of International Studies, Seoul National University</p>
+            <p class="note">Thesis: <cite>The Value of the Kaesong Industrial Complex to North Korea:
+              Economic Implications of the Shutdown Incidents in 2009 and 2013</cite></p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="when">2008–2012</div>
+          <div class="what">
+            <h3>B.A., International Relations</h3>
+            <p class="sub">Tufts University · Minor in Economics and Media Studies</p>
+            <p class="note">Thesis: <cite>A Comparative Analysis of Educational Broadcasting for Children
+              in Korea and the United States</cite></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+      <div class="stack">
+        <div class="item">
+          <div class="when">2017–2018</div>
+          <div class="what">
+            <h3>Research Associate, FEALAC Secretariat</h3>
+            <p class="sub">Ministry of Foreign Affairs, Republic of Korea</p>
+            <p class="note">Policy research and development cooperation for the East Asia–Latin America
+              Cooperation Forum.</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="when">2016–2017</div>
+          <div class="what">
+            <h3>Policy Assistant, Member's Office</h3>
+            <p class="sub">National Assembly of the Republic of Korea</p>
+            <p class="note">Policy briefs and legislative monitoring on social and labour issues.</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="when">2013–2014</div>
+          <div class="what">
+            <h3>Programme Assistant, Teacher Exchange Division</h3>
+            <p class="sub">UNESCO Asia-Pacific Centre of Education for International Understanding</p>
+            <p class="note">Training programmes for teachers from Korea, Mongolia and the Philippines.</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="when">2018</div>
+          <div class="what">
+            <h3>Research support</h3>
+            <p class="sub">Bank of Korea Working Paper 2018-13</p>
+            <p class="note">Data cleaning and statistical support for microdata analysis of Korean household
+              and labour force surveys.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Grants and fellowships</h2>
+      <div class="stack">
+        <div class="item">
+          <div class="when">2018–2020</div>
+          <div class="what"><h3>Global Ph.D. Fellowship</h3>
+            <p class="sub">National Research Foundation of Korea</p></div>
+        </div>
+        <div class="item">
+          <div class="when">2021</div>
+          <div class="what"><h3>Brain Korea 21 FOUR Programme Fellowship</h3>
+            <p class="sub">Graduate School of International Studies, Seoul National University</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Methods and tools</h2>
+      <ul class="chips">
+        <li>R</li><li>Python</li><li>Topic modelling</li><li>Content analysis</li>
+        <li>Comparative policy analysis</li><li>Survey analysis</li>
+        <li>English</li><li>Korean</li><li>Spanish</li>
+      </ul>
+    </section>
+
+    <footer>Last updated October 2026.</footer>
+  </main>
+</div>
